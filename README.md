@@ -3,6 +3,8 @@ A library for accessing financial data from
 [Yodlee API](https://developer.yodlee.com/Yodlee_API). Built for easier
 integration with Laravel PHP Framework as a dependency.
 
+The code is from [progknife/yodlee-api](https://github.com/progknife/yodlee-api).
+
 ## Code Example
 ```php
 <?php
