@@ -1,9 +1,9 @@
 {
-    "name": "progknife/yodlee-api",
+    "name": "BlocSolution/yodlee-api",
     "description": "Yodlee API SDK for PHP",
     "license": "MIT",
     "support": {
-        "source": "https://github.com/progknife/yodlee-api"
+        "source": "https://github.com/BlocSolution/yodlee-api"
     },
     "authors": [
         {
