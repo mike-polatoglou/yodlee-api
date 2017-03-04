@@ -44,6 +44,7 @@ Check the **examples/** directory for sample scripts.
 | void | `logout()` | Ends the authenticated user's session. |
 | int\|bool | `register(string $username, string $password, string $email)` | Register and authenticates the user to Yodlee. |
 | void | `unregister()` | Deletes the authenticated user's data from Yodlee. |
+| array\|bool | `accessTokensIputs(int appId)` | Get inputs for FastLink integration. Look at [Yodlee API Documentation](https://developer.yodlee.com/apidocs/index.php#Fastlink) for details. |
 
 ### `providers()`
 | Return | Method | Description |
