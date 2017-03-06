@@ -143,7 +143,7 @@ class User extends ApiAbstract
      * @param int
      * @return array|bool
      */
-    public function accessTokensIputs($app = 10003600)
+    public function accessTokensInputs($app = 10003600)
     {
         $url = $this->getEndpoint('/user/accessTokens?appIds=' . $app);
         $requestHeaders = [
