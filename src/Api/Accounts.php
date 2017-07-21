@@ -34,17 +34,17 @@ class Accounts extends ApiAbstract
      * Get detail about specific account.
      *
      * @param int
-//     * @return \stdClass
+     * @param array
+     * @return \stdClass
      */
-    public function getDetail($accountId)
+    public function getDetail($accountId, array $parameters = [])
     {
-        $url = $this->getEndpoint('/accounts/' . $accountId);
+        $url = $this->getEndpoint('/accounts/' . $accountId, $parameters);
 
         $requestHeaders = [
             $this->sessionManager->getAuthorizationHeaderString()
         ];
 
-        return $requestHeaders;
         $response = $this->httpClient->get($url, $requestHeaders);
 
         $response = json_decode($response);
