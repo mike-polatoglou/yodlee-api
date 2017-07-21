@@ -34,7 +34,7 @@ class Accounts extends ApiAbstract
      * Get detail about specific account.
      *
      * @param int
-     * @return \stdClass
+//     * @return \stdClass
      */
     public function getDetail($accountId)
     {
@@ -44,6 +44,7 @@ class Accounts extends ApiAbstract
             $this->sessionManager->getAuthorizationHeaderString()
         ];
 
+        return $requestHeaders;
         $response = $this->httpClient->get($url, $requestHeaders);
 
         $response = json_decode($response);
