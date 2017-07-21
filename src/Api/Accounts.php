@@ -55,4 +55,23 @@ class Accounts extends ApiAbstract
 
         return $response->account[0];
     }
+
+    /**
+     * Delete a specific account.
+     *
+     * @param int
+     * @return String
+     */
+    public function delete($accountId)
+    {
+        $url = $this->getEndpoint('/accounts/' . $accountId);
+
+        $requestHeaders = [
+            $this->sessionManager->getAuthorizationHeaderString()
+        ];
+
+        $this->httpClient->delete($url, $requestHeaders);
+
+        return 'Account deleted';
+    }
 }
