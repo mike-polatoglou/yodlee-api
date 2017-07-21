@@ -54,7 +54,7 @@ class Accounts extends ApiAbstract
             return new \stdClass;
         }
 
-        return $response->account;
+        return $response->account[0];
     }
 
     /**
