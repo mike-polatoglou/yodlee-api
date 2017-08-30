@@ -34,7 +34,7 @@ class User extends ApiAbstract
         $response = json_decode($response);
 
         if(isset($response->errorCode)) {
-            throw new YodleeException($response->errorCode, $response->errorMessage);
+            throw new YodleeException($response->errorCode . $response->errorMessage);
         }
 
         if (empty($response->user->session->userSession)) {
@@ -108,7 +108,7 @@ class User extends ApiAbstract
         $response = json_decode($response);
 
         if(isset($response->errorCode)) {
-            throw new YodleeException($response->errorCode, $response->errorMessage);
+            throw new YodleeException($response->errorCode . $response->errorMessage);
         }
 
         if (empty($response->user->session->userSession)) {
