@@ -2,6 +2,8 @@
 
 namespace YodleeApi\Api;
 
+use YodleeApi\Exceptions\YodleeException;
+
 class User extends ApiAbstract
 {
     /**
@@ -12,6 +14,7 @@ class User extends ApiAbstract
      * @param string
      * @param string
      * @return bool
+     * @throws YodleeException
      */
     public function login($loginName, $password)
     {
@@ -30,8 +33,11 @@ class User extends ApiAbstract
 
         $response = json_decode($response);
 
-        if (empty($response->user->session->userSession)) {
+        if(isset($response->errorCode)) {
+            throw new YodleeException($response->errorCode, $response->errorMessage);
+        }
 
+        if (empty($response->user->session->userSession)) {
             return false;
         }
 
@@ -75,6 +81,7 @@ class User extends ApiAbstract
      * @param string
      * @param string
      * @return int|bool
+     * @throws YodleeException
      */
     public function register($loginName, $password, $email)
     {
@@ -100,8 +107,11 @@ class User extends ApiAbstract
 
         $response = json_decode($response);
 
-        if (empty($response->user->session->userSession)) {
+        if(isset($response->errorCode)) {
+            throw new YodleeException($response->errorCode, $response->errorMessage);
+        }
 
+        if (empty($response->user->session->userSession)) {
             return false;
         }
 

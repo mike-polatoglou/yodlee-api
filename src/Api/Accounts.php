@@ -2,6 +2,8 @@
 
 namespace YodleeApi\Api;
 
+use YodleeApi\Exceptions\YodleeException;
+
 class Accounts extends ApiAbstract
 {
     /**
