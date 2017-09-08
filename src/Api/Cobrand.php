@@ -15,10 +15,14 @@ class Cobrand extends ApiAbstract
     {
         $url = $this->getEndpoint('/cobrand/login');
 
-        $response = $this->httpClient->post($url, [
-            'cobrandLogin'    => $cobrandLogin,
-            'cobrandPassword' => $cobrandPassword
-        ]);
+        $response = $this->httpClient->post($url,
+            [
+                "cobrand" => [
+                    'cobrandLogin' => $cobrandLogin,
+                    'cobrandPassword' => $cobrandPassword
+                ]
+            ]
+            , ['content-type: application/json']);
 
         $response = json_decode($response);
 
